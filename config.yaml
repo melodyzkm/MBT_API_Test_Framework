@@ -5,3 +5,9 @@ Servers:
 Urls:
   Base_Url: "http://test.mybesttoken.com"
   Time_Out: 5
+
+email:
+  smtp_addr: "smtp.laplacetech.cn":
+  from_addr: "liangfenglong@laplacetech.cn"
+  emai_pwd: "Admin@123"
+  to_addr: "liangfenglong@laplacetech.cn"
