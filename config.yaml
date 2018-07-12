@@ -13,6 +13,7 @@ Urls:
   Token_Grade: "/api/v3/grade"
   Version: "/api/v3/version"
   Login: "/api/v3/signin"
+  Logout: "/api/v3/signout"
 
 
 email:
