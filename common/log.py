@@ -53,3 +53,5 @@ class MyLog:
             MyLog.mutex.release()
 
         return MyLog.log
+
+
