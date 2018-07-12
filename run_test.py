@@ -9,10 +9,10 @@ def main(test_suit):
 
     result = BeautifulReport(test_suite)
     result.report(filename=report_name, description=test_suit, log_path='result')
-    try:
-        me.email_file(filename=os.path.join(os.curdir,'result',report_name+'.html'),showname='自动化报告.html',subject='自动化测试报告',sendername='自动化机器人')
-    except:
-        pass
+    # try:
+    #     me.email_file(filename=os.path.join(os.curdir,'result',report_name+'.html'),showname='自动化报告.html',subject='自动化测试报告',sendername='自动化机器人')
+    # except:
+    #     pass
 if __name__ == "__main__":
     path,dir,file=list(os.walk(os.path.join(os.curdir,'testcase')))[0]
     # test_suits = dir
