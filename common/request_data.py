@@ -9,7 +9,7 @@ class ConfigRequest:
     def __init__(self):
         global base_url, timeout
         base_url = configs.get_url("Base_Url")
-        timeout = configs.get_url("Timeout")
+        timeout = configs.get_url("Time_Out")
         self.log = Log.get_log()
         self.logger = self.log.get_logger()
         self.params = {}
