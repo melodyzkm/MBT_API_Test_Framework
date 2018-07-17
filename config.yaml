@@ -14,6 +14,23 @@ Urls:
   Version: "/api/v3/version"
   Login: "/api/v3/signin"
   Logout: "/api/v3/signout"
+  token_index: "/api/v3/token/index"
+  token_code: "/api/v3/token/{}"
+  token_quotation_ranking_change_ratio_24h: "/api/v3/quotation/ranking/change_ratio_24h"
+  token_candle: "/api/v3/candle/{}/{}"
+  message_news: "/api/v1/message/news/{}"
+  f10_intro: "/api/v1/f10/intro/{}"
+  f10_links: "/api/v1/f10/links/{}"
+  symbol_list: "/api/v3/symbol"
+  symbol_index: "/api/v3/symbol/index"
+  symbol_pricediff: "/api/v2/symbol/pricediff"
+  symbol_detail: "/api/v3/symbol/{}/{}"
+  symbol_rank: "/api/v3/symbol/ranking"
+  symbol_rank_abbr: "/api/v3/symbol/ranking"
+  symbol_rank_field: "/api/v2/symbol/ranking"
+  symbol_markets: "/api/v3/markets"
+  symbol_candle_hist: "/api/v3/candle/{}/{}/{}"
+  tokens_flow: "/api/v2/tokens/flow/{}"
 
 
 email:

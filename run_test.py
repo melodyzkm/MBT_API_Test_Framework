@@ -16,6 +16,6 @@ def main(test_suit):
 if __name__ == "__main__":
     path,dir,file=list(os.walk(os.path.join(os.curdir,'testcase')))[0]
     # test_suits = dir
-    test_suits=['alltoken']
+    test_suits=['marketdata']
     for test_suit in test_suits:
         main(test_suit)
