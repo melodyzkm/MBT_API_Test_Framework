@@ -1,7 +1,3 @@
-#Servers:
-#  BC_MONGODB: 192.168.4.158
-#  PORT_MONGODB: 27017
-
 Urls:
   Base_Url: "http://test.mybesttoken.com"
   Time_Out: 5
@@ -33,11 +29,6 @@ Urls:
   tokens_flow: "/api/v2/tokens/flow/{}"
 
 
-#email:
-#  smtp_addr: "smtp.laplacetech.cn"
-#  from_addr: "liangfenglong@laplacetech.cn"
-#  emai_pwd: "Admin@123"
-#  to_addr: "liangfenglong@laplacetech.cn"
 
 Login:
   Mobile: "18600000000"

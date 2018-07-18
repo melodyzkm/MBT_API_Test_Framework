@@ -20,6 +20,7 @@ class lapVersion(TestCase):
     def test_get(self):
         '执行获取Telegram列表接口'
         url = url_base + api
+        print(url)
         try:
             rep=requests.post(url).json()
         except Exception as e:
