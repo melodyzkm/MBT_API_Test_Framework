@@ -1,21 +1,29 @@
 from datetime import  *
 import unittest,os
+from unittest.suite import TestSuite
 from BeautifulReport import BeautifulReport
 from common.emailsender import MYEMAIL
-me=MYEMAIL()
-def main(test_suit):
-    report_name = str(datetime.now().strftime("%Y%m%d_%H%M"))
-    test_suite = unittest.defaultTestLoader.discover(test_suit, pattern='*test.py', top_level_dir='testcase')
 
-    result = BeautifulReport(test_suite)
-    result.report(filename=report_name, description=test_suit, log_path='result')
-    # try:
-    #     me.email_file(filename=os.path.join(os.curdir,'result',report_name+'.html'),showname='自动化报告.html',subject='自动化测试报告',sendername='自动化机器人')
-    # except:
-    #     pass
+
+def run_test(path:str='testcase'):
+    """
+    :param path: With default path testcase, the method will execute all testcases, otherwise it only execute the
+    cases which in the specific path
+    :return: test report
+    """
+    report_name = "{}_{}".format(path, str(datetime.now().strftime("%Y%m%d%H%M")))
+    testsuits = TestSuite()
+
+    if path == 'testcase':
+        for dir in os.listdir(os.path.join(os.curdir, path)):
+            testsuits.addTests(unittest.defaultTestLoader.discover(dir, pattern='*test.py', top_level_dir='testcase'))
+    else:
+        testsuits.addTests(unittest.defaultTestLoader.discover(path, pattern='*test.py', top_level_dir='testcase'))
+
+    result = BeautifulReport(testsuits)
+    result.report(filename=report_name, description=path, log_path='result')
+
+
 if __name__ == "__main__":
-    path,dir,file=list(os.walk(os.path.join(os.curdir,'testcase')))[0]
-    # test_suits = dir
-    test_suits=['marketdata']
-    for test_suit in test_suits:
-        main(test_suit)
+    # run_test('login')
+    run_test()
