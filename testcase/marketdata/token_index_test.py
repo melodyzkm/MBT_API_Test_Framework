@@ -1,10 +1,21 @@
-import random
+"""
+@Version: 1.0
+@Project: TokenIndex
+@Author: xuruizeng
+@Data: 2018/7/18
+@File: token_index_test.py
+@Description: 检查首页数据
+"""
+
+
 import os
+import random
 import unittest
+
 from common.log import MyLog
-from get_config import GetConfig
 from common.mongodb import BcfMongo
 from common.request_data import ConfigRequest
+from get_config import GetConfig
 
 config = GetConfig()
 base_url = config.get_url('Base_Url')
@@ -19,14 +30,14 @@ class TokenIndex(unittest.TestCase):
     测试首页接口
     """
     def setUp(self):
-        logger.info('test {} start'.format(test_url))
+        logger.info('test "{}" start'.format(test_url))
 
     def tearDown(self):
-        logger.info('test {} end'.format(test_url))
+        logger.info('test "{}" end'.format(test_url))
 
     def check_indicators(self, items):
         """
-        测试indicator各项数据
+        测试indicators
         """
         b_ret = True
 
@@ -179,7 +190,7 @@ class TokenIndex(unittest.TestCase):
 
     def test_token_index(self):
         """
-        测试返回数据的正确性
+        测试首页接口
         """
         request = ConfigRequest()
         request.set_url(test_url)

@@ -1,10 +1,21 @@
-import random
+"""
+@Version: 1.0
+@Project: TokenCandle
+@Author: xuruizeng
+@Data: 2018/7/18
+@File: token_candle_test.py
+@Description: 检查K线数据
+"""
+
+
 import os
+import random
 import unittest
+
 from common.log import MyLog
-from get_config import GetConfig
 from common.mongodb import BcfMongo
 from common.request_data import ConfigRequest
+from get_config import GetConfig
 
 config = GetConfig()
 base_url = config.get_url('Base_Url')
@@ -17,17 +28,17 @@ logger.info('start run {}'.format(__file__))
 
 class TokenCandle(unittest.TestCase):
     """
-    测试币种详情接口
+    测试K线接口
     """
     def setUp(self):
-        logger.info('test {} start'.format(test_url))
+        logger.info('test "{}" start'.format(test_url.format('Bitcoin', '1d')))
 
     def tearDown(self):
-        logger.info('test {} end'.format(test_url))
+        logger.info('test "{}" end'.format(test_url.format('Bitcoin', '1d')))
 
     def test_token_candle(self):
         """
-        测试返回数据的正确性
+        测试K线接口
         """
         request = ConfigRequest()
         request.set_url(test_url.format('Bitcoin', '1d'))
