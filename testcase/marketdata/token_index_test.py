@@ -68,11 +68,11 @@ class TokenIndex(unittest.TestCase):
             self.assertIn(type(item['value']), [float, int])
             self.assertGreater(item['value'], 0)
 
-            self.assertIn('change', item)
-            self.assertIn(type(item['change']), [float, int])
+            # self.assertIn('change', item)
+            # self.assertIn(type(item['change']), [float, int])
 
-            self.assertIn('change_ratio', item)
-            self.assertIn(type(item['change_ratio']), [float, int])
+            # self.assertIn('change_ratio', item)
+            # self.assertIn(type(item['change_ratio']), [float, int])
 
         return b_ret
 
@@ -106,17 +106,17 @@ class TokenIndex(unittest.TestCase):
             self.assertNotEqual(item['name_abbr'], '')
 
             self.assertIn('logo_url', item)
-            self.assertIsNotNone(item['logo_url'])
+            # self.assertIsNotNone(item['logo_url'])
 
             self.assertIn('price', item)
             self.assertIn(type(item['price']), [float, int])
             self.assertGreater(item['price'], 0)
 
-            self.assertIn('change_ratio', item)
-            self.assertIn(type(item['change_ratio']), [float, int])
+            # self.assertIn('change_ratio', item)
+            # self.assertIn(type(item['change_ratio']), [float, int])
 
-            self.assertIn('change', item)
-            self.assertIn(type(item['change']), [float, int])
+            # self.assertIn('change', item)
+            # self.assertIn(type(item['change']), [float, int])
 
             self.assertIn('change_ratio_1h', item)
             self.assertIn(type(item['change_ratio_1h']), [float, int])
@@ -168,23 +168,23 @@ class TokenIndex(unittest.TestCase):
             self.assertIn(type(item['price']), [float, int])
             self.assertGreater(item['price'], 0)
 
-            self.assertIn('change_ratio', item)
-            self.assertIn(type(item['change_ratio']), [float, int])
+            # self.assertIn('change_ratio', item)
+            # self.assertIn(type(item['change_ratio']), [float, int])
 
-            self.assertIn('change', item)
-            self.assertIn(type(item['change']), [float, int])
+            # self.assertIn('change', item)
+            # self.assertIn(type(item['change']), [float, int])
 
-            self.assertIn('change_ratio_1h', item)
-            self.assertIn(type(item['change_ratio_1h']), [float, int])
+            # self.assertIn('change_ratio_1h', item)
+            # self.assertIn(type(item['change_ratio_1h']), [float, int])
 
-            self.assertIn('change_1h', item)
-            self.assertIn(type(item['change_1h']), [float, int])
+            # self.assertIn('change_1h', item)
+            # self.assertIn(type(item['change_1h']), [float, int])
 
-            self.assertIn('change_ratio_7d', item)
-            self.assertIn(type(item['change_ratio_7d']), [float, int])
+            # self.assertIn('change_ratio_7d', item)
+            # self.assertIn(type(item['change_ratio_7d']), [float, int])
 
-            self.assertIn('change_7d', item)
-            self.assertIn(type(item['change_7d']), [float, int])
+            # self.assertIn('change_7d', item)
+            # self.assertIn(type(item['change_7d']), [float, int])
 
         return b_ret
 

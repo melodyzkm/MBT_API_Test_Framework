@@ -22,10 +22,10 @@ Urls:
   symbol_pricediff: "/api/v2/symbol/pricediff"
   symbol_detail: "/api/v3/symbol/{}/{}"
   symbol_rank: "/api/v3/symbol/ranking"
-  symbol_rank_abbr: "/api/v3/symbol/ranking"
-  symbol_rank_field: "/api/v2/symbol/ranking"
-  symbol_markets: "/api/v3/markets"
-  symbol_candle_hist: "/api/v3/candle/{}/{}/{}"
+  symbol_rank_abbr: "/api/v3/symbol/ranking?abbr={}"
+  symbol_rank_volume: "/api/v3/symbol/ranking?field=volume"
+  markets: "/api/v3/markets"
+  candle: "/api/v3/candle/{}/{}/{}"
   tokens_flow: "/api/v2/tokens/flow/{}"
 
 

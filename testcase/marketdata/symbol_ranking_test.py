@@ -1,10 +1,10 @@
 """
 @Version: 1.0
-@Project: SymbolList
+@Project: SymbolRanking
 @Author: xuruizeng
 @Data: 2018/7/18
-@File: symbol_list_test.py
-@Description: 检查交易对列表数据
+@File: symbol_ranking_test.py
+@Description: 检查交易对排行数据
 """
 
 
@@ -19,16 +19,16 @@ from get_config import GetConfig
 
 config = GetConfig()
 base_url = config.get_url('Base_Url')
-test_url = config.get_url('symbol_list')
+test_url = config.get_url('symbol_rank')
 
 log = MyLog.get_log()
 logger = log.get_logger()
 logger.info('start run {}'.format(__file__))
 
 
-class SymbolList(unittest.TestCase):
+class SymbolRanking(unittest.TestCase):
     """
-    测试交易对列表接口
+    测试交易对排行接口
     """
     def setUp(self):
         logger.info('test "{}" start'.format(test_url))
@@ -36,9 +36,9 @@ class SymbolList(unittest.TestCase):
     def tearDown(self):
         logger.info('test "{}" end'.format(test_url))
 
-    def test_symbol_list(self):
+    def test_symbol_ranking(self):
         """
-        测试交易对列表接口
+        测试交易对排行接口
         """
         request = ConfigRequest()
         request.set_url(test_url)
@@ -46,15 +46,18 @@ class SymbolList(unittest.TestCase):
 
         self.assertIsInstance(response, list)
         self.assertGreaterEqual(len(response), 0)
+
         for item in response:
             self.assertIsInstance(item, dict)
-            #self.assertEqual(len(item), 16, msg='{} {} length is wrong'.format(item['market'], item['symbol']))
+            self.assertGreaterEqual(len(item), 20)
             # time
             self.assertIn('time', item)
             self.assertIsInstance(item['time'], int)
+            self.assertGreater(item['time'], 0)
             # update_time
             self.assertIn('update_time', item)
             self.assertIsInstance(item['update_time'], int)
+            self.assertGreater(item['update_time'], 0)
             # open
             self.assertIn('open', item)
             self.assertIn(type(item['open']), [float, int])
@@ -87,15 +90,10 @@ class SymbolList(unittest.TestCase):
             self.assertIn('symbol', item)
             self.assertIsInstance(item['symbol'], str)
             self.assertGreater(len(item['symbol']), 0)
-            # change
-            # self.assertIn('change', item)
-            # self.assertIn(type(item['change']), [float, int])
-            # change_ratio
-            # self.assertIn('change_ratio', item)
-            # self.assertIn(type(item['change_ratio']), [float, int])
+
             # market_name_cn
             self.assertIn('market_name_cn', item)
-            # self.assertIsInstance(item['market_name_cn'], str)
+            #self.assertIsInstance(item['market_name_cn'], str)
             # market_name_en
             self.assertIn('market_name_en', item)
             self.assertIsInstance(item['market_name_en'], str)
@@ -105,3 +103,24 @@ class SymbolList(unittest.TestCase):
             # pay_code
             self.assertIn('pay_code', item)
             self.assertIsInstance(item['pay_code'], str)
+            # code
+            self.assertIn('code', item)
+            self.assertIsInstance(item['code'], str)
+            self.assertGreater(len(item['code']), 0)
+            # name
+            self.assertIn('name', item)
+            self.assertIsInstance(item['name'], str)
+            self.assertGreater(len(item['name']), 0)
+            # name_en
+            self.assertIn('name_en', item)
+            self.assertIsInstance(item['name_en'], str)
+            # name_cn
+            self.assertIn('name_cn', item)
+            #self.assertIsInstance(item['name_cn'], str)
+            # name_abbr
+            self.assertIn('name_abbr', item)
+            self.assertIsInstance(item['name_abbr'], str)
+            # price
+            self.assertIn('price', item)
+            self.assertIn(type(item['price']), [float, int])
+            self.assertGreater(item['price'], 0)
