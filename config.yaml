@@ -1,3 +1,7 @@
+Servers:
+  BC_MONGODB: "192.168.4.158"
+  PORT_MONGODB: 27017
+
 Urls:
   Base_Url: "http://test.mybesttoken.com"
   Time_Out: 5
@@ -27,6 +31,8 @@ Urls:
   markets: "/api/v3/markets"
   candle: "/api/v3/candle/{}/{}/{}"
   tokens_flow: "/api/v2/tokens/flow/{}"
+  homepage_sort: "/api/v3/home/rank_index"
+  news: "/api/v1/message"
 
 
 
