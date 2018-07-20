@@ -20,7 +20,7 @@ url_base = cfg.get_value("Urls", "Base_Url")
 api = cfg.get_value("Urls", "Twitter")
 mylog=logfile("twitter.log",type=0)
 
-class laptwitter(TestCase):
+class LapTwitter(TestCase):
     "获取twitter列表"
     def setUp(self):
         pass

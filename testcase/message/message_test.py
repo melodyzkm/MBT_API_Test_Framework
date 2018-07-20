@@ -18,7 +18,7 @@ url_base = cfg.get_value("Urls", "Base_Url")
 api = cfg.get_value("Urls", "Message")
 mylog=logfile("Message.log",type=0)
 
-class lapMessage(TestCase):
+class LapMessage(TestCase):
     "获取新闻列表"
     def setUp(self):
         pass

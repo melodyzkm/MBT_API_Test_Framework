@@ -17,7 +17,7 @@ api = cfg.get_value("Urls", "Symbol_Flow")
 mylog = logfile("Symbol_Flow.log", type=0)
 
 
-class getSymbolFlow(TestCase):
+class GetSymbolFlow(TestCase):
     def setUp(self):
         pass
 

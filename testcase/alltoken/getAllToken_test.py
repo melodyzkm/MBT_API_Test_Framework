@@ -17,7 +17,7 @@ api = cfg.get_value("Urls", "Get_Token_All")
 mylog = logfile("Get_Token_All.log", type=0)
 
 
-class getAllToken(TestCase):
+class GetAllToken(TestCase):
     "获取token列表"
 
     def setUp(self):

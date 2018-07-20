@@ -20,7 +20,7 @@ url_base = cfg.get_value("Urls", "Base_Url")
 api = cfg.get_value("Urls", "Telegram")
 mylog=logfile("Telegram.log",type=0)
 
-class laptelegram(TestCase):
+class LapTelegram(TestCase):
     "获取telegram列表"
     def setUp(self):
         pass

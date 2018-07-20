@@ -17,7 +17,7 @@ url_base = cfg.get_value("Urls", "Base_Url")
 api = cfg.get_value("Urls", "Version")
 mylog=logfile("Version.log",type=0)
 
-class lapVersion(TestCase):
+class LapVersion(TestCase):
     def setUp(self):
         pass
 
