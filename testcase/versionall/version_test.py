@@ -1,4 +1,12 @@
 #coding=gbk
+"""
+@Version: 1.0
+@Project: Version
+@Author: long
+@Data: 2018/7/19
+@File: Version.py
+@Description: 获取版本信息
+"""
 from unittest import TestCase
 import requests
 from common.logger import logfile
