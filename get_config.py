@@ -45,4 +45,4 @@ class GetConfig:
 
 if __name__ == "__main__":
     c = GetConfig()
-    print(c.get_value('email','smtp_addr'))
+    print(c.get_servers("PORT_MONGODB"))
