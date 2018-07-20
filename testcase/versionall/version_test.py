@@ -18,7 +18,6 @@ api = cfg.get_value("Urls", "Version")
 mylog=logfile("Version.log",type=0)
 
 class lapVersion(TestCase):
-    "获取Telegram列表"
     def setUp(self):
         pass
 
@@ -26,9 +25,9 @@ class lapVersion(TestCase):
         pass
 
     def test_get(self):
-        '执行获取Telegram列表接口'
+        '获取版本信息'
         url = url_base + api
-        print(url)
+
         try:
             rep=requests.post(url).json()
         except Exception as e:
@@ -37,6 +36,16 @@ class lapVersion(TestCase):
 
         mylog.info(rep)
         self.assertEqual((isinstance(rep,dict) and len(rep)>0),True,msg=rep)
+
+        self.assertRegex(rep.get("version",None),r'^\d\.\d\.\d$')
+
+        self.assertRegex(rep.get("ios_version", None), r'^\d\.\d\.\d$')
+
+        self.assertRegex(rep.get("android_version", None), r'^\d\.\d\.\d$')
+
+        self.assertRegex(rep.get("android_url", None), r'^http.*apk$')
+
+        self.assertRegex(rep.get("ios_url", None), r'^http')
 
 if __name__=="__main__":
     lapVersion.run()

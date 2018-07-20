@@ -86,7 +86,96 @@ class tokenGradeOne(TestCase):
 
             self.assertIsInstance(rep.get("chain_active_user_count_5day_score_text", None), str)
 
+        if rep.get("twitter_follower_count_score", None):
+            self.assertIsInstance(rep.get("twitter_follower_count_score", None), int)
+            self.assertGreaterEqual(rep.get("twitter_follower_count_score"),0)
+            self.assertGreaterEqual(100,rep.get("chain_user_count_score"))
+
+            self.assertIsInstance(rep.get("twitter_follower_count_value", None), int)
+
+            self.assertIn(rep.get("twitter_follower_count_score_level", None),["A+","A","A-","B+","B","B-","C+","C","C-","D+","D","D-","E"] )
+
+            self.assertIsInstance(rep.get("twitter_follower_count_score_text", None), str)
+
+        if rep.get("twitter_follower_count_7day_score", None):
+            self.assertIsInstance(rep.get("twitter_follower_count_7day_score", None), int)
+            self.assertGreaterEqual(rep.get("twitter_follower_count_7day_score"),0)
+            self.assertGreaterEqual(100,rep.get("twitter_follower_count_7day_score"))
+
+            self.assertIsInstance(rep.get("twitter_follower_count_7day_value", None), int)
+
+            self.assertIn(rep.get("twitter_follower_count_7day_score_level", None),["A+","A","A-","B+","B","B-","C+","C","C-","D+","D","D-","E"] )
+
+            self.assertIsInstance(rep.get("twitter_follower_count_7day_score_text", None), str)
+
+        if rep.get("telegram_user_count_score", None):
+            self.assertIsInstance(rep.get("telegram_user_count_score", None), int)
+            self.assertGreaterEqual(rep.get("telegram_user_count_score"),0)
+            self.assertGreaterEqual(100,rep.get("telegram_user_count_score"))
+
+            self.assertIsInstance(rep.get("telegram_user_count_value", None), int)
+
+            self.assertIn(rep.get("telegram_user_count_score_level", None),["A+","A","A-","B+","B","B-","C+","C","C-","D+","D","D-","E"] )
+
+            self.assertIsInstance(rep.get("telegram_user_count_score_text", None), str)
+
+        if rep.get("telegram_user_count_7day_score", None):
+            self.assertIsInstance(rep.get("telegram_user_count_7day_score", None), int)
+            self.assertGreaterEqual(rep.get("telegram_user_count_7day_score"),0)
+            self.assertGreaterEqual(100,rep.get("telegram_user_count_7day_score"))
+
+            self.assertIsInstance(rep.get("telegram_user_count_7day_value", None), int)
+
+            self.assertIn(rep.get("telegram_user_count_7day_score_level", None),["A+","A","A-","B+","B","B-","C+","C","C-","D+","D","D-","E"] )
+
+            self.assertIsInstance(rep.get("telegram_user_count_7day_score_text", None), str)
+
+        if rep.get("git_commit_count_score", None):
+            self.assertIsInstance(rep.get("git_commit_count_score", None), int)
+            self.assertGreaterEqual(rep.get("git_commit_count_score"),0)
+            self.assertGreaterEqual(100,rep.get("git_commit_count_score"))
+
+            self.assertIsInstance(rep.get("git_commit_count_value", None), int)
+
+            self.assertIn(rep.get("git_commit_count_score_level", None),["A+","A","A-","B+","B","B-","C+","C","C-","D+","D","D-","E"] )
+
+            self.assertIsInstance(rep.get("git_commit_count_score_text", None), str)
+
+        if rep.get("git_commit_count_30day_score", None):
+            self.assertIsInstance(rep.get("git_commit_count_30day_score", None), int)
+            self.assertGreaterEqual(rep.get("git_commit_count_30day_score"),0)
+            self.assertGreaterEqual(100,rep.get("git_commit_count_30day_score"))
+
+            self.assertIsInstance(rep.get("git_commit_count_30day_value", None), int)
+
+            self.assertIn(rep.get("git_commit_count_30day_score_level", None),["A+","A","A-","B+","B","B-","C+","C","C-","D+","D","D-","E"] )
+
+            self.assertIsInstance(rep.get("git_commit_count_30day_score_text", None), str)
+
+        self.assertIsInstance(rep.get("chain_avg_value", None), (float,int,))
+        self.assertIsInstance(rep.get("community_avg_value", None), (float,int,))
+        self.assertIsInstance(rep.get("code_avg_value", None), (float,int,))
+        self.assertIsInstance(rep.get("chain_avg_score", None), (float,int,))
+        self.assertIsInstance(rep.get("community_avg_score", None), (float,int,))
+        self.assertIsInstance(rep.get("code_avg_score", None), (float,int,))
+        self.assertIsInstance(rep.get("general_score", None), (float,int,))
+        self.assertIn(rep.get("chain_avg_score_level", None),
+                      ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "E"])
+        self.assertIn(rep.get("community_avg_score_level", None),
+                      ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "E"])
+        self.assertIn(rep.get("code_avg_score_level", None),
+                      ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "E"])
+        self.assertIn(rep.get("general_score_level", None),
+                      ["A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "E"])
+        self.assertIsInstance(rep.get("general_score_text", None), str)
+        self.assertIsNot(rep.get("general_score_text", None), "")
+
     def test_001_get(self):
+        '比特币体检'
         self.check("Bitcoin")
+
+    def test_002_get(self):
+        'REQ体检'
+        self.check("0x8f8221afbb33998d8584a2b05749ba73c37a938a")
 if __name__ == "__main__":
     tokenGradeOne.run()
