@@ -27,6 +27,8 @@ Urls:
   markets: "/api/v3/markets"
   candle: "/api/v3/candle/{}/{}/{}"
   tokens_flow: "/api/v2/tokens/flow/{}"
+  homepage_sort: "/api/v3/home/rank_index"
+  news: "/api/v1/message"
 
 
 
