@@ -21,7 +21,7 @@ market_cap_ratio_api = "/api/v1/home/market_cap_ratio"
 log = MyLog.get_log()
 logger = log.get_logger()
 
-class GetAuthenticCode(unittest.TestCase):
+class MarketcapRatio(unittest.TestCase):
 
     def setUp(self):
         print("Test start")
