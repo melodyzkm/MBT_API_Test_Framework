@@ -18,7 +18,7 @@ api = cfg.get_value("Urls", "Token_Grade")
 mylog = logfile("Token_Grade_One.log", type=0)
 
 
-class tokenGradeOne(TestCase):
+class TokenGradeOne(TestCase):
     "获取币体检详情"
 
     def setUp(self):
@@ -178,4 +178,4 @@ class tokenGradeOne(TestCase):
         'REQ体检'
         self.check("0x8f8221afbb33998d8584a2b05749ba73c37a938a")
 if __name__ == "__main__":
-    tokenGradeOne.run()
+    TokenGradeOne.run()

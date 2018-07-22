@@ -79,5 +79,5 @@ class LapTwitter(TestCase):
         self.check("Bitcoin","en",ts,50)
 
 if __name__=="__main__":
-    laptwitter.run()
+    LapTwitter.run()
 

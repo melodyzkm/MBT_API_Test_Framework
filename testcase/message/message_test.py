@@ -90,5 +90,5 @@ class LapMessage(TestCase):
         self.check("Bitcoin","en",ts,50)
 
 if __name__=="__main__":
-    lapMessage.run()
+    LapMessage.run()
 

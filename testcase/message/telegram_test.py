@@ -78,5 +78,5 @@ class LapTelegram(TestCase):
         self.check("Bitcoin","en",ts,50)
 
 if __name__=="__main__":
-    laptelegram.run()
+    LapTelegram.run()
 

@@ -48,5 +48,5 @@ class LapVersion(TestCase):
         self.assertRegex(rep.get("ios_url", None), r'^http')
 
 if __name__=="__main__":
-    lapVersion.run()
+    LapVersion.run()
 
