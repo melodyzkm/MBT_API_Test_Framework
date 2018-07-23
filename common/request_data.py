@@ -31,6 +31,7 @@ class ConfigRequest:
     def get(self):
         try:
             response = requests.get(self.url, params=self.params, headers=self.headers, timeout=timeout)
+            print("<{}> {}".format(response.status_code, response.url))
             return  response.json()
         except TimeoutError:
             self.logger.error("Time out: {}".format(self.url))
@@ -39,6 +40,7 @@ class ConfigRequest:
     def post(self):
         try:
             response = requests.post(self.url, data=self.data, headers=self.headers, timeout=timeout)
+            print("<{}> {}".format(response.status_code, response.url))
             return  response.json()
         except TimeoutError:
             self.logger.error("Time out: {}".format(self.url))
