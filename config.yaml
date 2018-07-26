@@ -33,6 +33,8 @@ Urls:
   tokens_flow: "/api/v2/tokens/flow/{}"
   homepage_sort: "/api/v3/home/rank_index"
   news: "/api/v1/message"
+  QR_Code: "/api/v3/my/qrcode"
+  examine: "/api/v3/my/examine"
 
 
 
