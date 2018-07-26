@@ -15,11 +15,11 @@ from get_config import GetConfig
 cfg = GetConfig()
 url_base = cfg.get_value("Urls", "Base_Url")
 api = cfg.get_value("Urls", "Token_Grade")
-mylog = logfile("Token_Grade_One.log", type=0)
+# mylog = logfile("Token_Grade_One.log", type=0)
 
 
 class TokenGradeOne(TestCase):
-    "获取币体检详情"
+    """获取币体检详情"""
 
     def setUp(self):
         pass
@@ -33,10 +33,10 @@ class TokenGradeOne(TestCase):
         try:
             rep = requests.get(url).json()
         except Exception as e:
-            mylog.critical(e)
+            # mylog.critical(e)
             self.assertEqual(True, False, msg=e)
 
-        mylog.info(rep)
+        # mylog.info(rep)
         self.assertEqual((isinstance(rep, dict)), True, msg=rep)
 
         self.assertIsInstance(rep.get("_id", None), str)
@@ -171,11 +171,11 @@ class TokenGradeOne(TestCase):
         self.assertIsNot(rep.get("general_score_text", None), "")
 
     def test_001_get(self):
-        '比特币体检'
+        """比特币体检"""
         self.check("Bitcoin")
 
     def test_002_get(self):
-        'REQ体检'
+        """REQ体检"""
         self.check("0x8f8221afbb33998d8584a2b05749ba73c37a938a")
 if __name__ == "__main__":
     TokenGradeOne.run()

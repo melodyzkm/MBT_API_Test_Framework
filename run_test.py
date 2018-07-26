@@ -2,8 +2,8 @@ from datetime import  *
 import unittest,os
 from unittest.suite import TestSuite
 from BeautifulReport import BeautifulReport
+import shutil
 from common.emailsender import MYEMAIL
-
 
 def run_test(path:str='testcase'):
     """
@@ -19,9 +19,9 @@ def run_test(path:str='testcase'):
             testsuits.addTests(unittest.defaultTestLoader.discover(dir, pattern='*test.py', top_level_dir='testcase'))
     else:
         testsuits.addTests(unittest.defaultTestLoader.discover(path, pattern='*test.py', top_level_dir='testcase'))
-
     result = BeautifulReport(testsuits)
     result.report(filename=report_name, description=path, log_path='result')
+    shutil.copy('result/%s.html'%report_name,'result/test_api_ressult.html')
 
 
 if __name__ == "__main__":
