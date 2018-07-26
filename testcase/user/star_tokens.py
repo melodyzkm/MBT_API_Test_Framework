@@ -17,7 +17,7 @@ cfg = GetConfig()
 url_base = cfg.get_value("Urls", "Base_Url")
 login_api = cfg.get_value("Urls", "Login")
 api = cfg.get_value("Urls", "star_tokens")
-mylog = logfile("star_tokens.log", type=0)
+# mylog = logfile("star_tokens.log", type=0)
 mobile = cfg.get_value("Login", "Mobile")
 valid = cfg.get_value("Login", "Valid")
 header = {
@@ -25,7 +25,7 @@ header = {
 
 
 class StarTokens(TestCase):
-    "获取用户的自选币/交易对"
+    """获取用户的自选币/交易对"""
 
     def setUp(self):
         '执行预置条件'
@@ -51,7 +51,7 @@ class StarTokens(TestCase):
         try:
             rep = requests.get(url).json()
         except Exception as e:
-            mylog.critical(e)
+            # mylog.critical(e)
             self.assertEqual(True, False, msg=e)
 
         return rep
@@ -79,10 +79,10 @@ class StarTokens(TestCase):
         try:
             rep = requests.post(url, json=data, headers=header).json()
         except Exception as e:
-            mylog.critical(e)
+            # mylog.critical(e)
             self.assertEqual(True, False, msg=e)
 
-        mylog.info(rep)
+        # mylog.info(rep)
 
     def delete_startokens(self, type, value, market=None):
         '删除自选币'
@@ -106,10 +106,10 @@ class StarTokens(TestCase):
         try:
             rep = requests.delete(url, json=data).json()
         except Exception as e:
-            mylog.critical(e)
+            # mylog.critical(e)
             self.assertEqual(True, False, msg=e)
 
-        mylog.info(rep)
+        # mylog.info(rep)
 
     def put_startokens(self, data):
         '排序自选币'
@@ -117,13 +117,13 @@ class StarTokens(TestCase):
         try:
             rep = requests.put(url, json=data).json()
         except Exception as e:
-            mylog.critical(e)
+            # mylog.critical(e)
             self.assertEqual(True, False, msg=e)
 
-        mylog.info(rep)
+        # mylog.info(rep)
 
     def test_all(self):
-        "增->查->排序->查->删->查"
+        """增->查->排序->查->删->查"""
         "加入两个币和一个交易对"
         self.post_startokens("token", "Bitcoin")
         self.post_startokens("token", "0x8f8221afbb33998d8584a2b05749ba73c37a938a")

@@ -16,10 +16,10 @@ import time
 cfg = GetConfig()
 url_base = cfg.get_value("Urls", "Base_Url")
 api = cfg.get_value("Urls", "Message")
-mylog=logfile("Message.log",type=0)
+# mylog=logfile("Message.log",type=0)
 
 class LapMessage(TestCase):
-    "获取新闻列表"
+    """获取新闻列表"""
     def setUp(self):
         pass
 
@@ -32,10 +32,10 @@ class LapMessage(TestCase):
         try:
             rep=requests.get(url).json()
         except Exception as e:
-            mylog.critical(e)
+            # mylog.critical(e)
             self.assertEqual(True,False,msg=e)
 
-        mylog.info(rep)
+        # mylog.info(rep)
 
         self.assertEqual((isinstance(rep,list)),True,msg=rep)
 
@@ -75,17 +75,17 @@ class LapMessage(TestCase):
             self.assertIsNot(item.get("news_id",None), "")
 
     def test_001_get(self):
-        '获取BTC的新闻信息'
+        """获取BTC的新闻信息"""
         ts=int(time.time())*1000
         self.check("Bitcoin","cn",ts,50)
 
     def test_002_get(self):
-        '获取REQ的新闻信息'
+        """获取REQ的新闻信息"""
         ts=int(time.time())*1000
         self.check("0x8f8221afbb33998d8584a2b05749ba73c37a938a","cn",ts,50)
 
     def test_003_get(self):
-        '获取BTC的英文新闻信息'
+        """获取BTC的英文新闻信息"""
         ts=int(time.time())*1000
         self.check("Bitcoin","en",ts,50)
 

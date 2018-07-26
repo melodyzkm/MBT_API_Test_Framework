@@ -18,10 +18,10 @@ import time
 cfg = GetConfig()
 url_base = cfg.get_value("Urls", "Base_Url")
 api = cfg.get_value("Urls", "Telegram")
-mylog=logfile("Telegram.log",type=0)
+# mylog=logfile("Telegram.log",type=0)
 
 class LapTelegram(TestCase):
-    "获取telegram列表"
+    """获取telegram列表"""
     def setUp(self):
         pass
 
@@ -34,10 +34,10 @@ class LapTelegram(TestCase):
         try:
             rep=requests.get(url).json()
         except Exception as e:
-            mylog.critical(e)
+            # mylog.critical(e)
             self.assertEqual(True,False,msg=e)
 
-        mylog.info(rep)
+        # mylog.info(rep)
 
         self.assertEqual((isinstance(rep,list)),True,msg=rep)
 
@@ -63,17 +63,17 @@ class LapTelegram(TestCase):
             self.assertIsNot(item.get("id",None), "")
 
     def test_001_get(self):
-        '获取BTC的telegram信息'
+        """获取BTC的telegram信息"""
         ts=int(time.time())*1000
         self.check("Bitcoin","cn",ts,50)
 
     def test_002_get(self):
-        '获取REQ的telegram信息'
+        """获取REQ的telegram信息"""
         ts=int(time.time())*1000
         self.check("0x8f8221afbb33998d8584a2b05749ba73c37a938a","cn",ts,50)
 
     def test_003_get(self):
-        '获取BTC的telegram新闻信息'
+        """获取BTC的telegram新闻信息"""
         ts=int(time.time())*1000
         self.check("Bitcoin","en",ts,50)
 

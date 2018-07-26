@@ -16,13 +16,13 @@ cfg = GetConfig()
 url_base = cfg.get_value("Urls", "Base_Url")
 login_api = cfg.get_value("Urls", "Login")
 api = cfg.get_value("Urls", "refreshtoken")
-mylog = logfile("Refreshtoken.log", type=0)
+# mylog = logfile("Refreshtoken.log", type=0)
 mobile = cfg.get_value("Login", "Mobile")
 valid = cfg.get_value("Login", "Valid")
 
 
 class Refreshtoken(TestCase):
-    "刷新用户的token和过期时间"
+    """刷新用户的token和过期时间"""
 
     def setUp(self):
         '执行预置条件'
@@ -42,7 +42,7 @@ class Refreshtoken(TestCase):
             self.assertIs(rep.get("code", None), 0, msg="登录失败")
             self.token = rep.get("token", None)
         except Exception as e:
-            mylog.critical(e)
+            # mylog.critical(e)
             self.assertEqual(True, False, msg=e)
         return self.token
 
@@ -55,15 +55,15 @@ class Refreshtoken(TestCase):
         try:
             rep = requests.post(url, data=data).json()
         except Exception as e:
-            mylog.critical(e)
+            # mylog.critical(e)
             self.assertEqual(True, False, msg=e)
 
-        mylog.info(rep)
+        # mylog.info(rep)
         self.assertEqual((isinstance(rep, dict)), True, msg=rep)
         return rep
 
     def test_correct(self):
-        '正确执行刷新token的接口'
+        """正确执行刷新token的接口"""
         token = self.login()
         rep = self.check(token)
         self.assertIs(rep.get("code", None), 0, msg="接口执行失败")
@@ -74,7 +74,7 @@ class Refreshtoken(TestCase):
         self.assertIn(len(rep.get('token')), [i for i in range(100, 256)])
 
     def test_expired(self):
-        '传入的token已经过期'
+        """传入的token已经过期"""
         token = self.login()
         #再次执行登录使token无效
         self.login()

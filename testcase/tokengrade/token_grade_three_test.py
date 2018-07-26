@@ -15,11 +15,11 @@ from get_config import GetConfig
 cfg = GetConfig()
 url_base = cfg.get_value("Urls", "Base_Url")
 api = cfg.get_value("Urls", "Token_Grade")
-mylog = logfile("Token_Grade_One.log", type=0)
+# mylog = logfile("Token_Grade_One.log", type=0)
 
 
 class TokenGradeThree(TestCase):
-    "获取3个优质币"
+    """获取3个优质币"""
 
     def setUp(self):
         pass
@@ -28,15 +28,15 @@ class TokenGradeThree(TestCase):
         pass
 
     def test_get(self):
-        '执行获取3个优质币接口'
+        """执行获取3个优质币接口"""
         url = url_base + api
         try:
             rep = requests.get(url).json()
         except Exception as e:
-            mylog.critical(e)
+            # mylog.critical(e)
             self.assertEqual(True, False, msg=e)
 
-        mylog.info(rep)
+        # mylog.info(rep)
         self.assertEqual((isinstance(rep, list) and len(rep)==3), True, msg=rep)
         for item in rep:
             self.assertIsInstance(item.get("_id", None), str)
