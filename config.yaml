@@ -35,6 +35,7 @@ Urls:
   news: "/api/v1/message"
   refreshtoken: "/api/v3/refreshtoken"
   star_tokens: "/api/v3/my/star/tokens"
+  monitor: "/api/v3/monitor?last={}&limit={}"
 
 
 
