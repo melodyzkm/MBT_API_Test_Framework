@@ -35,6 +35,8 @@ Urls:
   news: "/api/v1/message"
   QR_Code: "/api/v3/my/qrcode"
   examine: "/api/v3/my/examine"
+  my_points: "/api/v3/my/user/point"
+  points_management: "/api/v3/my/point"
 
 
 
