@@ -37,7 +37,7 @@ class TokenGradeOne(TestCase):
             self.assertEqual(True, False, msg=e)
 
         # mylog.info(rep)
-        self.assertEqual((isinstance(rep, dict)), True, msg=rep)
+        self.assertEqual((isinstance(rep, list)), True, msg=rep)
 
         self.assertIsInstance(rep.get("_id", None), str)
         self.assertIsNot(rep.get("_id", None), "")
