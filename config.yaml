@@ -33,9 +33,10 @@ Urls:
   tokens_flow: "/api/v2/tokens/flow/{}"
   homepage_sort: "/api/v3/home/rank_index"
   news: "/api/v1/message"
-  refreshtoken: "/api/v3/refreshtoken"
-  star_tokens: "/api/v3/my/star/tokens"
-  monitor: "/api/v3/monitor?last={}&limit={}"
+  QR_Code: "/api/v3/my/qrcode"
+  examine: "/api/v3/my/examine"
+  my_points: "/api/v3/my/user/point"
+  points_management: "/api/v3/my/point"
 
 
 

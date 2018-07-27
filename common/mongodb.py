@@ -48,7 +48,19 @@ class BcfMongo():
         else:
             raise ValueError("The key must be {}".format("/".join(valid_fields)))
 
+    def get_user_info(self, mobile):
+        try:
+            return self.db_bcf.users.find_one({"mobile": mobile})
+        except Exception as e:
+            print(e)
+            return None
+
+    def update(self, table, d_condition, d_update):
+        self.db_bcf.get_collection(table).update_one(d_condition, {"$set":d_update})
+
+    def insert(self, table, d_condition, d_update):
+        self.db_bcf.get_collection(table).update_one(d_condition, {"$set":d_update})
+
 if __name__  == "__main__":
     m = BcfMongo()
-    print(m.get_chain_indicators_with_code("0x168296bb09e24a88805cb9c33356536b980d3fc5", "name_en"))
-#     print(get_meta_info_with_code("0x168296bb09e24a88805cb9c33356536b980d3fc5", "name_en"))
+    m.update('users', {"mobile" : "18600000000"}, "a")
