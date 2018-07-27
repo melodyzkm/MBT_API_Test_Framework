@@ -37,6 +37,7 @@ Urls:
   examine: "/api/v3/my/examine"
   my_points: "/api/v3/my/user/point"
   points_management: "/api/v3/my/point"
+  monitor: "/api/v3/monitor?last={}&limit={}"
 
 
 
