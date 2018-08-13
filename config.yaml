@@ -3,7 +3,7 @@ Servers:
   PORT_MONGODB: 27017
 
 Urls:
-  Base_Url: "http://test.mybesttoken.com"
+  Base_Url: "https://dev.mybesttoken.cn"
   Time_Out: 5
   Get_Token_All: "/api/v3/token/all"
   Symbol_Flow: "/api/v3/fundflow/{}/{}/{}?{}"
