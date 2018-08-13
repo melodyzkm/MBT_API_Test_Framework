@@ -50,5 +50,5 @@ class GetQrCode(unittest.TestCase):
         request_qr_code.set_headers(headers)
         request_qr_code.set_url(api_qr_code)
         response_qr_code = request_qr_code.get()
-        self.assertEqual(len(response_qr_code.get("qr_code")), 2600)
+        self.assertGreater(len(response_qr_code.get("qr_code")), 2566)
         self.assertEqual(len(response_qr_code.get("invitation")), 6)

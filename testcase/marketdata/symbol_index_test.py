@@ -49,7 +49,7 @@ class SymbolIndex(unittest.TestCase):
         self.assertGreater(len(response['indicators']), 0)
         for item in response['indicators']:
             self.assertIsInstance(item, dict)
-            self.assertEqual(len(item), 16)
+            self.assertEqual(len(item), 18)
             # code
             self.assertIn('code', item)
             self.assertIsInstance(item['code'], str)

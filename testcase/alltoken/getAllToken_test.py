@@ -52,7 +52,7 @@ class GetAllToken(TestCase):
                 self.assertRegex(item.get("logo_url", None), r'^http')
 
             # self.assertIsInstance(item.get("name_cn", None), str)
-            if item.get("name_cn", None):
+            if "name_cn" in item and item.get("name_cn"):
                 self.assertRegex(item.get("name_cn", None), r'[\u2E80-\u9FFF]+')
 
             self.assertIsInstance(item.get("name_abbr", None), str)
