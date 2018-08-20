@@ -80,7 +80,7 @@ class Monitor(TestCase):
 
             else:
                 self.assertIn("_id", item)
-                self.assertEqual(item["code"], "")
+                self.assertIn(item["code"], ["",None])
                 self.assertIn("time", item)
                 self.assertEqual(item["value"], 0)
                 self.assertEqual(item["ex_datas"], ["Bitcoin", "Ethereum", "Litecoin"])
